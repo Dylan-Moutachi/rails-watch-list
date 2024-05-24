@@ -1,0 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/free-photo/group-young-people-cinema_23-2148115397.jpg?t=st=1716542282~exp=1716545882~hmac=b09e49fd0226290f37b0c651bbd4383e5a4feb811d139a2b6139d0283d9da877&w=900);">
+  <div class="container">
+    <h1>Movie Library</h1>
+    <p>Make lists of your favorite movies</p>
+    <a class="btn btn-light" href=<%= new_list_path %>>Create a new list</a>
+  </div>
+<div>
+<div class="container my-4 text-center" style="width: 60 vw;">
+  <% @lists.each do |list| %>
+    <div class="card my-4 mx-auto text-center" style="width: 50%;">
+      <%= link_to list.name, list_path(list) %>
+    </div>
+  <% end %>
+</div>

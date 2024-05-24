@@ -1,0 +1,21 @@
+<div class="bookmarks m-auto" style="width: 30vw;">
+  <h1 class="text-center">Movie bookmarks</h1>
+  <% @list.movies.each do |movie| %>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <div class="card-trip my-3 d-flex" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <img src=<%= movie.poster_url %> />
+      <div class="card-trip-infos">
+        <div>
+          <h3 class="mb-3"><%= movie.title %></h3>
+            <h5>Comments:</h5>
+
+             <button type="button" class="btn btn-light"><p ><%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Do you really want to delete this bookmark?"} %></p></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="links m-auto" style="width: 30vw;">
+  <p><%= link_to "Create a new movie bookmark", new_list_bookmark_path(@list) %></p>
+  <p><%= link_to "Back to lists overview", lists_path %></p>
+</div>
