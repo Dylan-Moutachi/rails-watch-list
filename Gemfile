@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "3.1.2"
 
 gem "dotenv-rails"
+gem "cloudinary"
 
 gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
